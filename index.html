@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STRANDED</title>
-  <script type="module" crossorigin src="./assets/main-Ddb9yBAM.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-DpKMdbr_.css">
+  <script type="module" crossorigin src="./assets/main-DeCGgFKQ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-CW_Ctn4A.css">
 </head>
 
 <body>
@@ -77,6 +77,30 @@
                     <button class="btn btn-title" id="mp-btn">
                         <span class="btn-bracket">&#10216;</span>
                         <span class="btn-label">MULTIPLAYER</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                    <button class="btn btn-title" id="params-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">PARAMETERS</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overlay" id="params-overlay" style="display:none;">
+                <h1>PARAMETERS</h1>
+                <p class="overlay-subtitle">Click a key to rebind. Press ESC to cancel.</p>
+                <div id="params-list"></div>
+                <p class="overlay-hint" id="params-status">&nbsp;</p>
+                <div class="mp-action-row">
+                    <button class="btn btn-title btn-title-secondary" id="params-back-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">BACK</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                    <button class="btn btn-title btn-title-secondary" id="params-reset-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">RESET</span>
                         <span class="btn-bracket">&#10217;</span>
                     </button>
                 </div>
@@ -260,17 +284,7 @@
                 <h1>PAUSED</h1>
                 <div id="pause-body">
                     <canvas id="pause-map" width="270" height="270"></canvas>
-                    <div id="controls-list">
-                        <div><span class="ctrl-key">MOVE</span><span class="ctrl-val">ZQSD</span></div>
-                        <div><span class="ctrl-key">LOOK</span><span class="ctrl-val">MOUSE</span></div>
-                        <div><span class="ctrl-key">SHOOT</span><span class="ctrl-val">LEFT CLICK</span></div>
-                        <div><span class="ctrl-key">CHARGED SHOT</span><span class="ctrl-val">HOLD CLICK</span></div>
-                        <div><span class="ctrl-key">ROCKET</span><span class="ctrl-val">RIGHT CLICK</span></div>
-                        <div><span class="ctrl-key">SWAP WEAPON</span><span class="ctrl-val">1..5 / WHEEL</span></div>
-                        <div><span class="ctrl-key">DASH</span><span class="ctrl-val">SHIFT</span></div>
-                        <div><span class="ctrl-key">LEVER</span><span class="ctrl-val">E</span></div>
-                        <div><span class="ctrl-key">PAUSE</span><span class="ctrl-val">ESC / P</span></div>
-                    </div>
+                    <div id="controls-list"></div>
                 </div>
                 <button class="btn" id="resume-btn">RESUME</button>
             </div>
