@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STRANDED</title>
-  <script type="module" crossorigin src="./assets/main-BdGg8KuF.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-DYl8BYJL.css">
+  <script type="module" crossorigin src="./assets/main-v2b7_S0U.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-CypKEOkg.css">
 </head>
 
 <body>
@@ -20,6 +20,7 @@
         <div id="canvas-wrap">
             <canvas id="game" width="640" height="380"></canvas>
             <canvas id="minimap" width="110" height="110"></canvas>
+            <pre id="perf-hud" style="display:none;"></pre>
 
             <div id="status-hud">
                 <div class="status-row score-row">
@@ -67,11 +68,10 @@
 
             <div class="overlay" id="screen-overlay">
                 <h1>STRANDED</h1>
-                <p>Survive and find the exit</p>
                 <div class="title-actions">
                     <button class="btn btn-title" id="start-btn">
                         <span class="btn-bracket">&#10216;</span>
-                        <span class="btn-label">ENTER SPACESHIP</span>
+                        <span class="btn-label">SINGLE PLAYER</span>
                         <span class="btn-bracket">&#10217;</span>
                     </button>
                     <button class="btn btn-title" id="mp-btn">
@@ -87,9 +87,54 @@
                 </div>
             </div>
 
-            <div class="overlay" id="params-overlay" style="display:none;">
+            <div class="overlay" id="sp-menu-overlay" style="display:none;">
+                <h1>SINGLE PLAYER</h1>
+                <div class="title-actions">
+                    <button class="btn btn-title" id="sp-normal-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">ESCAPE</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                    <button class="btn btn-title" id="sp-bossrush-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">BOSS RUSH</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                </div>
+                <div class="mp-action-row">
+                    <button class="btn btn-title btn-title-secondary" id="sp-menu-back-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">BACK</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overlay" id="params-menu-overlay" style="display:none;">
                 <h1>PARAMETERS</h1>
-                <p class="overlay-subtitle">Click a key to rebind. Press ESC to cancel.</p>
+                <div class="title-actions">
+                    <button class="btn btn-title" id="params-menu-controls-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">CONTROLS</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                    <button class="btn btn-title" id="params-menu-graphics-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">GRAPHICS</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                </div>
+                <div class="mp-action-row">
+                    <button class="btn btn-title btn-title-secondary" id="params-menu-back-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">BACK</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overlay" id="params-overlay" style="display:none;">
+                <h1>CONTROLS</h1>
                 <div id="params-list"></div>
                 <p class="overlay-hint" id="params-status">&nbsp;</p>
                 <div class="mp-action-row">
@@ -106,24 +151,46 @@
                 </div>
             </div>
 
-            <div class="overlay" id="mp-overlay" style="display:none;">
-                <h1>DEATHMATCH</h1>
-                <div id="mp-choice">
-                    <button class="btn btn-title" id="mp-host-btn">
-                        <span class="btn-bracket">&#10216;</span>
-                        <span class="btn-label">HOST MATCH</span>
-                        <span class="btn-bracket">&#10217;</span>
-                    </button>
-                    <button class="btn btn-title" id="mp-join-btn">
-                        <span class="btn-bracket">&#10216;</span>
-                        <span class="btn-label">JOIN MATCH</span>
-                        <span class="btn-bracket">&#10217;</span>
-                    </button>
-                    <button class="btn btn-title btn-title-secondary" id="mp-back-btn">
+            <div class="overlay" id="graphics-overlay" style="display:none;">
+                <h1>GRAPHICS</h1>
+                <div id="graphics-list"></div>
+                <p class="overlay-hint" id="graphics-status">&nbsp;</p>
+                <div class="mp-action-row">
+                    <button class="btn btn-title btn-title-secondary" id="graphics-back-btn">
                         <span class="btn-bracket">&#10216;</span>
                         <span class="btn-label">BACK</span>
                         <span class="btn-bracket">&#10217;</span>
                     </button>
+                    <button class="btn btn-title btn-title-secondary" id="graphics-reset-btn">
+                        <span class="btn-bracket">&#10216;</span>
+                        <span class="btn-label">RESET</span>
+                        <span class="btn-bracket">&#10217;</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overlay" id="mp-overlay" style="display:none;">
+                <h1>MULTIPLAYER</h1>
+                <div id="mp-choice">
+                    <div class="title-actions">
+                        <button class="btn btn-title" id="mp-host-btn">
+                            <span class="btn-bracket">&#10216;</span>
+                            <span class="btn-label">HOST MATCH</span>
+                            <span class="btn-bracket">&#10217;</span>
+                        </button>
+                        <button class="btn btn-title" id="mp-join-btn">
+                            <span class="btn-bracket">&#10216;</span>
+                            <span class="btn-label">JOIN MATCH</span>
+                            <span class="btn-bracket">&#10217;</span>
+                        </button>
+                    </div>
+                    <div class="mp-action-row">
+                        <button class="btn btn-title btn-title-secondary" id="mp-back-btn">
+                            <span class="btn-bracket">&#10216;</span>
+                            <span class="btn-label">BACK</span>
+                            <span class="btn-bracket">&#10217;</span>
+                        </button>
+                    </div>
                 </div>
                 <div id="mp-host-panel" style="display:none;">
                     <p class="overlay-subtitle">Share this code with your opponents:</p>
