@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STRANDED</title>
-  <script type="module" crossorigin src="./assets/main-Bsx8d8gF.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-BCJ-LtG7.css">
+  <script type="module" crossorigin src="./assets/main-DWSqKioj.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DOVDVGss.css">
 </head>
 
 <body>
@@ -193,8 +193,10 @@
                     </div>
                 </div>
                 <div id="mp-host-panel" style="display:none;">
-                    <p class="overlay-subtitle">Share this code with your opponents:</p>
-                    <div id="mp-host-code">…</div>
+                    <div class="mp-code-row">
+                        <span class="mp-code-label">ROOM CODE:</span>
+                        <div id="mp-host-code">…</div>
+                    </div>
                     <div class="mp-cols">
                         <div class="mp-col">
                             <div class="mp-col-label">SETTINGS</div>
@@ -245,9 +247,20 @@
                     </div>
                 </div>
                 <div id="mp-join-panel" style="display:none;">
-                    <p class="overlay-subtitle">Enter the host's code:</p>
-                    <input id="mp-join-code" type="text" autocomplete="off" spellcheck="false" />
-                    <ul class="mp-roster" id="mp-join-roster" style="display:none;"></ul>
+                    <div class="mp-code-row">
+                        <span class="mp-code-label">ROOM CODE:</span>
+                        <input id="mp-join-code" type="text" autocomplete="off" spellcheck="false" />
+                    </div>
+                    <div class="mp-cols" id="mp-join-cols" style="display:none;">
+                        <div class="mp-col">
+                            <div class="mp-col-label">SETTINGS</div>
+                            <div id="mp-join-settings" class="mp-replay-settings readonly"></div>
+                        </div>
+                        <div class="mp-col">
+                            <div class="mp-col-label">PLAYERS</div>
+                            <ul class="mp-roster" id="mp-join-roster"></ul>
+                        </div>
+                    </div>
                     <p class="overlay-hint" id="mp-join-status"></p>
                     <div class="mp-action-row">
                         <button class="btn btn-title btn-title-secondary" id="mp-join-cancel">
