@@ -7,10 +7,10 @@
     <title>STRANDED</title>
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2305080f'/%3E%3Cg stroke='%2300ffe0' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='16' y1='4' x2='16' y2='12'/%3E%3Cline x1='16' y1='20' x2='16' y2='28'/%3E%3Cline x1='4' y1='16' x2='12' y2='16'/%3E%3Cline x1='20' y1='16' x2='28' y2='16'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2300ffe0'/%3E%3C/svg%3E" />
-  <script type="module" crossorigin src="./assets/main-VxQCuVVz.js"></script>
+  <script type="module" crossorigin src="./assets/main-ZK6phMmQ.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/audio-os2rg0tr.js">
   <link rel="modulepreload" crossorigin href="./assets/vendor-BNIqaRDw.js">
-  <link rel="stylesheet" crossorigin href="./assets/main-DspGlyiK.css">
+  <link rel="stylesheet" crossorigin href="./assets/main-fUWLiavu.css">
 </head>
 
 <body>
@@ -155,7 +155,10 @@
 
             <div class="overlay" id="params-overlay" style="display:none;">
                 <h1>CONTROLS</h1>
-                <div id="params-list"></div>
+                <div id="params-list">
+                    <div id="params-sensitivity"></div>
+                    <div id="params-keys"></div>
+                </div>
                 <p class="overlay-hint" id="params-status">&nbsp;</p>
                 <div class="mp-action-row">
                     <button class="btn btn-title btn-title-secondary" id="params-back-btn">
@@ -464,7 +467,17 @@
                     </div>
                     <div class="pause-actions">
                         <button class="btn" id="logs-btn">VIEW LOGS</button>
+                        <button class="btn" id="pause-params-btn">PARAMETERS</button>
                         <button class="btn" id="resume-btn">RESUME</button>
+                        <button class="btn btn-danger" id="pause-quit-btn">QUIT</button>
+                    </div>
+                </div>
+                <div id="pause-confirm" style="display:none;">
+                    <p class="pause-confirm-title">QUIT TO TITLE?</p>
+                    <p class="pause-confirm-text">Your current run will be lost.</p>
+                    <div class="pause-actions">
+                        <button class="btn" id="pause-confirm-cancel-btn">CANCEL</button>
+                        <button class="btn btn-danger" id="pause-confirm-quit-btn">QUIT TO TITLE</button>
                     </div>
                 </div>
                 <div id="pause-logs" style="display:none;">
