@@ -7,10 +7,10 @@
     <title>STRANDED</title>
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2305080f'/%3E%3Cg stroke='%2300ffe0' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='16' y1='4' x2='16' y2='12'/%3E%3Cline x1='16' y1='20' x2='16' y2='28'/%3E%3Cline x1='4' y1='16' x2='12' y2='16'/%3E%3Cline x1='20' y1='16' x2='28' y2='16'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2300ffe0'/%3E%3C/svg%3E" />
-  <script type="module" crossorigin src="./assets/main-BzI5HyYR.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/audio-Dh7g3GlK.js">
+  <script type="module" crossorigin src="./assets/main-Bayy4YCS.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/audio-CNpwoNvi.js">
   <link rel="modulepreload" crossorigin href="./assets/vendor-BNIqaRDw.js">
-  <link rel="stylesheet" crossorigin href="./assets/main-DZjU0vTv.css">
+  <link rel="stylesheet" crossorigin href="./assets/main-3BXVIwuh.css">
 </head>
 
 <body>
@@ -235,6 +235,10 @@
                     <div id="customize-preview-zone">
                         <div class="customize-section-label">PREVIEW</div>
                         <canvas id="customize-preview" width="120" height="160"></canvas>
+                        <div id="customize-preview-arrows">
+                            <button id="preview-rotate-left" class="preview-arrow" type="button" aria-label="Rotate left">&#9664;</button>
+                            <button id="preview-rotate-right" class="preview-arrow" type="button" aria-label="Rotate right">&#9654;</button>
+                        </div>
                     </div>
                     <div id="customize-options">
                         <div class="customize-section-label">HATS</div>
@@ -243,10 +247,27 @@
                         <div id="helmets-grid"></div>
                         <div class="customize-section-label customize-section-gap">BODIES</div>
                         <div id="bodies-grid"></div>
-                        <div class="customize-section-label customize-section-gap">PLAYER COLOR</div>
-                        <div id="colors-grid"></div>
-                        <div class="customize-section-label customize-section-gap">ACCENT COLOR</div>
-                        <div id="accents-grid"></div>
+                        <div class="customize-section-label customize-section-gap">COLORS</div>
+                        <div id="color-pickers">
+                            <div class="color-picker">
+                                <div class="cp-title">PLAYER</div>
+                                <canvas class="cp-sv" id="cp-player-sv" width="120" height="96"></canvas>
+                                <canvas class="cp-hue" id="cp-player-hue" width="120" height="12"></canvas>
+                                <div class="cp-row">
+                                    <span class="cp-swatch" id="cp-player-swatch"></span>
+                                    <button class="cp-auto" id="cp-player-auto" type="button">AUTO</button>
+                                </div>
+                            </div>
+                            <div class="color-picker">
+                                <div class="cp-title">ACCENT</div>
+                                <canvas class="cp-sv" id="cp-accent-sv" width="120" height="96"></canvas>
+                                <canvas class="cp-hue" id="cp-accent-hue" width="120" height="12"></canvas>
+                                <div class="cp-row">
+                                    <span class="cp-swatch" id="cp-accent-swatch"></span>
+                                    <button class="cp-auto" id="cp-accent-auto" type="button">AUTO</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="mp-action-row">
