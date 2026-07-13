@@ -7,10 +7,10 @@
     <title>STRANDED</title>
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2305080f'/%3E%3Cg stroke='%2300ffe0' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='16' y1='4' x2='16' y2='12'/%3E%3Cline x1='16' y1='20' x2='16' y2='28'/%3E%3Cline x1='4' y1='16' x2='12' y2='16'/%3E%3Cline x1='20' y1='16' x2='28' y2='16'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2300ffe0'/%3E%3C/svg%3E" />
-  <script type="module" crossorigin src="./assets/main-CrdXv9-k.js"></script>
+  <script type="module" crossorigin src="./assets/main-C37-Mu44.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/vendor-Ds1glhWX.js">
   <link rel="modulepreload" crossorigin href="./assets/audio-C9FcucHI.js">
-  <link rel="stylesheet" crossorigin href="./assets/main-CEzZ5suR.css">
+  <link rel="stylesheet" crossorigin href="./assets/main-yGqxIvJ3.css">
 </head>
 
 <body>
@@ -26,13 +26,39 @@
                 <div id="touch-stick">
                     <div id="touch-stick-nub"></div>
                 </div>
-                <button id="touch-pause" type="button">&#10073;&#10073;</button>
-                <button id="touch-swap" type="button">SWAP</button>
-                <button id="touch-use" type="button">USE</button>
-                <button id="touch-dash" type="button">DASH</button>
-                <button id="touch-jump" type="button">JUMP</button>
-                <button id="touch-rocket" type="button">RKT</button>
-                <button id="touch-fire" type="button">FIRE</button>
+                <button id="touch-pause" type="button" aria-label="Pause">
+                    <svg viewBox="0 0 24 24"><path d="M9 5v14M15 5v14" stroke-width="3" /></svg>
+                </button>
+                <button id="touch-swap" type="button" aria-label="Switch weapon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 12a8 8 0 1 1-2.3-5.6" />
+                        <path d="M18 2v5h-5" />
+                    </svg>
+                </button>
+                <button id="touch-use" type="button" aria-label="Interact">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 20h16M12 20 17 8" />
+                        <circle cx="17.8" cy="6" r="2.2" />
+                    </svg>
+                </button>
+                <button id="touch-dash" type="button" aria-label="Dash">
+                    <svg viewBox="0 0 24 24"><path d="M6 5l7 7-7 7M13 5l7 7-7 7" /></svg>
+                </button>
+                <button id="touch-jump" type="button" aria-label="Jump">
+                    <svg viewBox="0 0 24 24"><path d="M12 20V6M6 11l6-6 6 6" /></svg>
+                </button>
+                <button id="touch-rocket" type="button" aria-label="Rocket">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2c2.2 2.8 3.5 6 3.5 9.5V15h-7v-3.5C8.5 8 9.8 4.8 12 2Z" />
+                        <path d="M8.5 14 5 19M15.5 14 19 19M12 15v5" />
+                    </svg>
+                </button>
+                <button id="touch-fire" type="button" aria-label="Fire">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5" />
+                        <path d="M12 1v5M12 18v5M1 12h5M18 12h5" />
+                    </svg>
+                </button>
             </div>
             <div id="kill-feed"></div>
             <pre id="perf-hud" style="display:none;"></pre>
