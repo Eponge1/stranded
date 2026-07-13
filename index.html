@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <title>STRANDED</title>
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2305080f'/%3E%3Cg stroke='%2300ffe0' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='16' y1='4' x2='16' y2='12'/%3E%3Cline x1='16' y1='20' x2='16' y2='28'/%3E%3Cline x1='4' y1='16' x2='12' y2='16'/%3E%3Cline x1='20' y1='16' x2='28' y2='16'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2300ffe0'/%3E%3C/svg%3E" />
-  <script type="module" crossorigin src="./assets/main-B9xiHgSB.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/audio-D63oiYUG.js">
-  <link rel="modulepreload" crossorigin href="./assets/vendor-BNIqaRDw.js">
-  <link rel="stylesheet" crossorigin href="./assets/main-DGQ1QKmI.css">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2305080f'/%3E%3Cg stroke='%2300ffe0' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='16' y1='4' x2='16' y2='12'/%3E%3Cline x1='16' y1='20' x2='16' y2='28'/%3E%3Cline x1='4' y1='16' x2='12' y2='16'/%3E%3Cline x1='20' y1='16' x2='28' y2='16'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%2300ffe0'/%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="./assets/main-C_v7DMm9.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/vendor-Ds1glhWX.js">
+  <link rel="modulepreload" crossorigin href="./assets/audio-C9FcucHI.js">
+  <link rel="stylesheet" crossorigin href="./assets/main-B_Jaq_gd.css">
 </head>
 
 <body>
@@ -18,6 +18,22 @@
         <div id="canvas-wrap">
             <canvas id="game" width="640" height="380"></canvas>
             <canvas id="minimap" width="110" height="110"></canvas>
+
+            <!-- Touch controls (phones/tablets) — wired and shown by ts/game/touch.ts -->
+            <div id="touch-ui">
+                <div id="touch-move"></div>
+                <div id="touch-look"></div>
+                <div id="touch-stick">
+                    <div id="touch-stick-nub"></div>
+                </div>
+                <button id="touch-pause" type="button">&#10073;&#10073;</button>
+                <button id="touch-swap" type="button">SWAP</button>
+                <button id="touch-use" type="button">USE</button>
+                <button id="touch-dash" type="button">DASH</button>
+                <button id="touch-jump" type="button">JUMP</button>
+                <button id="touch-rocket" type="button">RKT</button>
+                <button id="touch-fire" type="button">FIRE</button>
+            </div>
             <div id="kill-feed"></div>
             <pre id="perf-hud" style="display:none;"></pre>
 
@@ -583,7 +599,7 @@
         </div>
         
     </div>
-
+
 </body>
 
 </html>
